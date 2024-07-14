@@ -135,6 +135,31 @@ const showUserData = () => {
           FatherName: allInputs[3].value,
           Address: textAreaEl.value,
         };
+        if (allInputs[0].value != "") {
+    if (allInputs[1].value != "") {
+      if (allInputs[2].value != "") {
+        if (allInputs[3].value != "") {
+          if (textAreaEl.value != "") {
+           allUserData.splice(index, 1, user);
+        let string = JSON.stringify(allUserData);
+        localStorage.setItem("allUserData", string);
+        showUserData();
+            swal("Good!", "Data reistered Succesful!", "success");
+          } else {
+            swal("Address is not reistered!");
+          }
+        } else {
+          swal("Father's name is not reistered!");
+        }
+      } else {
+        swal("password is not reistered!");
+      }
+    } else {
+      swal("Email address is not reistered!");
+    }
+  } else {
+    swal("Name is not reistered!");
+  }
         allUserData.splice(index, 1, user);
         let string = JSON.stringify(allUserData);
         localStorage.setItem("allUserData", string);
